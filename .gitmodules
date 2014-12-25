@@ -1,0 +1,3 @@
+[submodule "vendor/formvalidation"]
+	path = vendor/formvalidation
+	url = https://github.com/formvalidation/formvalidation
