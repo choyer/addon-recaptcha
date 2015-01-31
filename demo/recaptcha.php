@@ -1,21 +1,18 @@
 <?php
 // Register the public and private keys at https://www.google.com/recaptcha/admin
-define('PUBLIC_KEY',  '6LfiX_0SAAAAAFGN6mRslurxcH4V1zXAfXIp3nv_');
-define('PRIVATE_KEY', '6LfiX_0SAAAAAH8Zu-YE4y3psgc7cZ84qQ7nZQic');
+define('SITE_KEY',   '6LdgOwETAAAAALA9auuNVKFeXizXcYFrKOVC_vs-');
+define('SECRET_KEY', '6LdgOwETAAAAAAHEd6l5XR5JOkBJDgUS4BPqxQrk');
 
-// https://developers.google.com/recaptcha/docs/php
+// https://github.com/google/ReCAPTCHA/tree/master/php
 require_once('recaptchalib.php');
+
+$reCaptcha = new ReCaptcha(SECRET_KEY);
 
 // Verify the captcha
 // https://developers.google.com/recaptcha/docs/verify
-$resp = recaptcha_check_answer(PRIVATE_KEY,
-                                $_SERVER['REMOTE_ADDR'],
-                                $_POST['recaptcha_challenge_field'],
-                                $_POST['recaptcha_response_field']
-                            );
+$resp = $reCaptcha->verifyResponse($_SERVER['REMOTE_ADDR'], $_POST['g-recaptcha-response']);
 
 echo json_encode(array(
-    'valid'   => $resp->is_valid,
-    'message' => $resp->is_valid ? null : 'Hey, the captcha is wrong!',       // $resp->error,
+    'valid'   => $resp->success,
+    'message' => $resp->success ? null  : 'Hey, the captcha is wrong!',       // $resp->errorCodes,
 ));
-
