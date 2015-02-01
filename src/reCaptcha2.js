@@ -1,15 +1,15 @@
 /**
  * reCaptcha add-on
- * This add-ons shows and validates a Google reCAPTCHA
+ * This add-ons shows and validates a Google reCAPTCHA v2
  *
- * @link        http://formvalidation.io/addons/reCaptcha/
+ * @link        http://formvalidation.io/addons/reCaptcha2/
  * @author      https://twitter.com/nghuuphuoc
  * @copyright   (c) 2013 - 2015 Nguyen Huu Phuoc
  * @license     http://formvalidation.io/license/
  */
 /* global grecaptcha: false */
 (function($) {
-    FormValidation.AddOn.reCaptcha = {
+    FormValidation.AddOn.reCaptcha2 = {
         html5Attributes: {
             element: 'element',
             message: 'message',
@@ -53,7 +53,7 @@
 
                 setTimeout(function() {
                     that._addCaptcha(validator, options);
-                }, 2000);
+                }, 3000);
             };
 
             var script = document.createElement('script');
