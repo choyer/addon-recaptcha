@@ -10,3 +10,10 @@ Support both reCAPTCHA v1:
 and v2:
 
 ![reCAPTCHA v2](screenshot/v2.gif)
+
+## Usage
+
+See the following documentation for usages:
+
+* [http://formvalidation.io/addons/recaptcha1/](Use reCaptcha1 add-on)
+* [http://formvalidation.io/addons/recaptcha2/](Use reCaptcha2 add-on)
