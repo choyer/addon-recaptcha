@@ -12,6 +12,7 @@
     FormValidation.AddOn.reCaptcha2 = {
         html5Attributes: {
             element: 'element',
+            language: 'language',
             message: 'message',
             sitekey: 'siteKey',
             theme: 'theme',
@@ -28,6 +29,8 @@
          * @param {FormValidation.Base} validator The validator instance
          * @param {Object} options The add-on options. Consists of the following keys:
          * - element: The ID of element showing the captcha
+         * - language: The language code defined by reCAPTCHA
+         * See https://developers.google.com/recaptcha/docs/language
          * - theme: The theme name provided by Google. It can be light (default), dark
          * - siteKey: The site key provided by Google
          * - message: The invalid message that will be shown in case the captcha is not valid
@@ -60,7 +63,7 @@
             script.type  = 'text/javascript';
             script.async = true;
             script.defer = true;
-            script.src   = '//www.google.com/recaptcha/api.js?onload=reCaptchaLoaded&render=explicit';
+            script.src   = '//www.google.com/recaptcha/api.js?onload=reCaptchaLoaded&render=explicit' + (options.language ? '&hl=' + options.language : '');
             document.getElementsByTagName('body')[0].appendChild(script);
         },
 
