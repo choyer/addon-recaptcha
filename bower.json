@@ -1,0 +1,19 @@
+{
+  "name": "formvalidation-addon-recaptcha",
+  "version": "0.2.0",
+  "author": {
+      "name": "Nguyen Huu Phuoc",
+      "email": "phuoc@huuphuoc.me",
+      "url": "https://twitter.com/nghuuphuoc"
+    },
+  "main": [
+    "src/reCaptcha2.js"
+  ],
+  "dependencies": {
+    "formValidation": "git@github.com:formvalidation/formvalidation.git#master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:choyer/addon-recaptcha.git"
+  }
+}
